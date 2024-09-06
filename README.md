@@ -1,4 +1,4 @@
-# Pemrograman_Mobile_2024
+# Pemrograman_Mobile_2024-Pertemuan 2
 Project Hello World
 
 NIM     : 2241720223
