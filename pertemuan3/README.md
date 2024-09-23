@@ -6,6 +6,7 @@ NAMA    : Sukma Bagus Wahasdwika
 
 # Praktikum 1 - Menerapkan Control Flows ("if/else")
 1. **Langkah 1:**
+
 ![Screenshot p1.0](img/p1.0.jpg)
 
 
