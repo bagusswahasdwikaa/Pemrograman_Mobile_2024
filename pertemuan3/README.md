@@ -7,6 +7,8 @@ NAMA    : Sukma Bagus Wahasdwika
 # Praktikum 1 - Menerapkan Control Flows ("if/else")
 1. **Langkah 1:**
 ![Screenshot p1.0](img/p1.0.jpg)
+
+
 2. **Langkah 2:**
 Hasil eksekusi ada di langkah 1 yang menunjukkan bahwa output adalah "Test2 Test2 again", Ini terjadi sebab variabel 'String test=test2' saat kondisi if-else test == test2 dipanggil maka akan bernilai true.
 3. **Langkah 3:**
@@ -14,7 +16,9 @@ Menambahkan kode program
 Kesalahan terjadi karena dalam Dart, variabel bertipe String tidak dapat langsung digunakan dalam kondisi if, yang mengharapkan ekspresi boolean (bool). Dalam kode tersebut, ‘test’ adalah sebuah String dengan nilai “true”, dan Dart tidak secara otomatis mengonversi String menjadi boolean.
 
 Perbaikan dan tambahan kode program sebelumnya:
+
 ![Screenshot p1.1](img/p1.1.png)
+
 # Praktikum 2 - Menerapkan Perulangan "while" dan "do-while"
 
 # Praktikum 3 - Menerapkan Perulangan "for" dan "break-continue"
