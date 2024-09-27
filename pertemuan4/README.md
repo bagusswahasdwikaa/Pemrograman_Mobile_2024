@@ -152,12 +152,15 @@ Setelah inisialisasi awal, salah satu isi dari mahasiswa2 diganti dengan nama da
 
 # Tugas Praktikum
 1. Silakan selesaikan Praktikum 1 sampai 5, lalu dokumentasikan berupa screenshot hasil pekerjaan Anda beserta penjelasannya!
+
     **JAWABAN:** Praktikum 1 sampai 5 telah dilaksanakan dan didokumentasikan serta penjelasan disetiap percobaan.
 
 2. Jelaskan yang dimaksud Functions dalam bahasa Dart!
+
     **JAWABAN:** Fungsi dalam bahasa Dart adalah sekumpulan kode yang dapat digunakan kembali untuk melaksanakan tugas tertentu. Penggunaan fungsi membantu dalam mengorganisir kode, menghindari pengulangan, dan meningkatkan modularitas program. Di Dart, fungsi bisa menerima parameter dan mengembalikan nilai, meskipun ada juga fungsi yang tidak mengembalikan nilai atau tidak memerlukan parameter.
 
 3. Jelaskan jenis-jenis parameter di Functions beserta contoh sintaksnya!
+
     **JAWABAN:**
     * Positional Parameters
         Positional parameters adalah parameter yang posisinya menentukan nilai yang harus diberikan saat fungsi dipanggil. Parameter ini bersifat wajib dan tidak dapat dilewati.
@@ -248,6 +251,7 @@ Setelah inisialisasi awal, salah satu isi dari mahasiswa2 diganti dengan nama da
 
 
 4. Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
+
     **JAWABAN:** Dalam Dart, fungsi dipandang sebagai objek kelas satu, yang berarti fungsi dapat diperlakukan seperti objek lainnya. Ini berarti bahwa fungsi dapat:
 
     * Disimpan dalam variabel.
@@ -271,6 +275,7 @@ Setelah inisialisasi awal, salah satu isi dari mahasiswa2 diganti dengan nama da
 
 
 5. Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+
     **JAWABAN:** Fungsi anonim, atau dikenal sebagai anonymous function atau lambda function, adalah fungsi yang dideklarasikan tanpa nama. Biasanya, fungsi ini digunakan dalam situasi di mana fungsinya hanya dipakai sekali, seperti untuk operasi yang tidak berulang atau ketika digunakan sebagai argumen untuk fungsi lain.
 
     Sintaks fungsi anonim di Dart: Fungsi anonim ditulis dengan tanda kurung ( ) diikuti oleh { } yang berisi isi fungsi. Fungsi ini juga dapat menerima parameter seperti halnya fungsi biasa.
@@ -284,6 +289,7 @@ Setelah inisialisasi awal, salah satu isi dari mahasiswa2 diganti dengan nama da
 
 6. Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
     **JAWABAN:**
+
     - Lexical Scope
 
         Lexical scope adalah aturan yang menentukan bagaimana variabel dalam suatu fungsi atau blok kode bisa diakses berdasarkan tempat di mana fungsi atau blok kode tersebut dideklarasikan. Dengan kata lain, lexical scope mengacu pada fakta bahwa variabel hanya dapat diakses di dalam blok di mana mereka dideklarasikan, serta di dalam fungsi yang berada di dalam blok tersebut.
@@ -323,6 +329,7 @@ Setelah inisialisasi awal, salah satu isi dari mahasiswa2 diganti dengan nama da
         ```
 
 7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
+
     **JAWABAN:**
     - Menggunakan Tuple (Record)
         Dart mendukung penggunaan record untuk mengembalikan beberapa nilai sekaligus. Dengan menggunakan record, dapat mengembalikan beberapa nilai dalam satu struktur tanpa perlu membuat kelas atau objek. Mendeklarasikan dan mengembalikan nilai-nilai yang diinginkan dalam bentuk record.
