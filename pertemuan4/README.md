@@ -152,10 +152,262 @@ Setelah inisialisasi awal, salah satu isi dari mahasiswa2 diganti dengan nama da
 
 # Tugas Praktikum
 1. Silakan selesaikan Praktikum 1 sampai 5, lalu dokumentasikan berupa screenshot hasil pekerjaan Anda beserta penjelasannya!
+    **JAWABAN:** Praktikum 1 sampai 5 telah dilaksanakan dan didokumentasikan serta penjelasan disetiap percobaan.
+
 2. Jelaskan yang dimaksud Functions dalam bahasa Dart!
+    **JAWABAN:** Fungsi dalam bahasa Dart adalah sekumpulan kode yang dapat digunakan kembali untuk melaksanakan tugas tertentu. Penggunaan fungsi membantu dalam mengorganisir kode, menghindari pengulangan, dan meningkatkan modularitas program. Di Dart, fungsi bisa menerima parameter dan mengembalikan nilai, meskipun ada juga fungsi yang tidak mengembalikan nilai atau tidak memerlukan parameter.
+
 3. Jelaskan jenis-jenis parameter di Functions beserta contoh sintaksnya!
+    **JAWABAN:**
+    * Positional Parameters
+        Positional parameters adalah parameter yang posisinya menentukan nilai yang harus diberikan saat fungsi dipanggil. Parameter ini bersifat wajib dan tidak dapat dilewati.
+
+        *contoh:*
+
+        ```dart
+
+            void printInfo(String name, int age) {
+
+        print('Name: $name, Age: $age');
+
+        }
+
+        void main() {
+
+        printInfo('Bagus', 20); // Output: Name: Bagus, Age: 20
+
+        }
+        ```
+
+    * Named Parameters
+        Named parameters memberikan lebih banyak fleksibilitas dalam pemanggilan fungsi. Mereka memungkinkan kita untuk menyebutkan nama parameter saat memanggil fungsi, sehingga urutan argumen tidak penting. Named parameters bersifat opsional kecuali ditandai dengan required.
+
+        *contoh:*
+
+        ```dart
+        void printInfo({required String name, required int age}) {
+        print('Name: $name, Age: $age');
+        }
+
+        void main() {
+        printInfo(name: 'Bagus', age: 20); // Output: Name: Bagus, Age: 20
+        }
+        ```
+
+    * Optional Positional Parameters
+        Optional positional parameters memungkinkan kita untuk mendefinisikan parameter yang tidak wajib diisi. Jika tidak diberikan, mereka akan memiliki nilai null secara default (jika tipe datanya nullable).
+
+        *contoh:*
+        
+        ```dart
+        void printInfo(String name, [int? age]) {
+        if (age != null) {
+            print('Name: $name, Age: $age');
+        } else {
+            print('Name: $name, Age: unknown');
+        }
+        }
+
+        void main() {
+        printInfo('Bagus');         // Output: Name: Bagus, Age: unknown
+        printInfo('Bagus', 20);     // Output: Name: Bagus, Age: 20
+        }
+        ```
+
+    * Default Parameters
+        Default parameters adalah parameter opsional yang memiliki nilai default. Jika nilai tidak disediakan saat memanggil fungsi, parameter ini akan menggunakan nilai default yang telah ditentukan.
+
+        *contoh:*
+        ```dart
+        void printInfo(String name, [int age = 19]) {
+        print('Name: $name, Age: $age');
+        }
+
+        void main() {
+        printInfo('Bagus');         // Output: Name: Bagus, Age: 19
+        printInfo('Bagus', 20);     // Output: Name: Bagus, Age: 20
+        }
+        ``` 
+
+    * Combined Example: Positional, Named, and Optional Parameters
+        Menggabungkan berbagai jenis parameter dalam satu fungsi, tetapi ada aturan bahwa positional parameters harus dideklarasikan sebelum optional parameters.
+
+        *contoh:*
+
+        ```dart
+        void printInfo(String name, {int age = 19, String? hobby}) {
+        print('Name: $name, Age: $age, Hobby: ${hobby ?? 'unknown'}');
+        }
+
+        void main() {
+        printInfo('Bagus');                         // Output: Name: Bagus, Age: 19, Hobby: unknown
+        printInfo('Bagus', age: 20);                // Output: Name: Bagus, Age: 20, Hobby: unknown
+        printInfo('Bagus', age: 20, hobby: 'Swimming'); // Output: Name: Bagus, Age: 20, Hobby: Swimming
+        }
+        ```
+
+
 4. Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
+    **JAWABAN:** Dalam Dart, fungsi dipandang sebagai objek kelas satu, yang berarti fungsi dapat diperlakukan seperti objek lainnya. Ini berarti bahwa fungsi dapat:
+
+    * Disimpan dalam variabel.
+    * Diteruskan sebagai argumen ke fungsi lain.
+    * Dikembalikan sebagai nilai dari fungsi lain.
+    * Disimpan dalam struktur data seperti list atau map.
+    CONTOH:
+
+    ```dart
+    void sapa(String name) {
+    print('Hello, $name!');
+    }
+
+    void main() {
+    var greet = sapa;  // Menyimpan fungsi sapa ke dalam variabel greet
+    greet('Bagus');   // Memanggil fungsi melalui variabel
+    }
+    ```
+
+    Kemampuan ini memberikan fleksibilitas tinggi dalam penulisan kode, karena fungsi dapat dimanipulasi dan digunakan layaknya data lainnya.
+
+
 5. Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+    **JAWABAN:** Fungsi anonim, atau dikenal sebagai anonymous function atau lambda function, adalah fungsi yang dideklarasikan tanpa nama. Biasanya, fungsi ini digunakan dalam situasi di mana fungsinya hanya dipakai sekali, seperti untuk operasi yang tidak berulang atau ketika digunakan sebagai argumen untuk fungsi lain.
+
+    Sintaks fungsi anonim di Dart: Fungsi anonim ditulis dengan tanda kurung ( ) diikuti oleh { } yang berisi isi fungsi. Fungsi ini juga dapat menerima parameter seperti halnya fungsi biasa.
+
+    Struktur umum fungsi anonim:
+    ```dart
+    (parameter1, parameter2, ...) {
+    // Badan fungsi
+    }
+    ```
+
 6. Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
+    **JAWABAN:**
+    - Lexical Scope
+
+        Lexical scope adalah aturan yang menentukan bagaimana variabel dalam suatu fungsi atau blok kode bisa diakses berdasarkan tempat di mana fungsi atau blok kode tersebut dideklarasikan. Dengan kata lain, lexical scope mengacu pada fakta bahwa variabel hanya dapat diakses di dalam blok di mana mereka dideklarasikan, serta di dalam fungsi yang berada di dalam blok tersebut.
+
+        Dalam lexical scope, sebuah fungsi dapat mengakses variabel yang dideklarasikan dalam scope di sekitarnya, yaitu di blok atau fungsi yang mendeklarasikan fungsi tersebut.
+
+        *Contoh Lexical Scope:*
+
+        ```dart
+        void main() {
+        int x = 10;
+
+        void printX() {
+            print(x);  // Fungsi ini dapat mengakses variabel 'x' karena berada dalam scope di luar fungsi ini
+        }
+
+        printX();  // Output: 10
+        }
+        ```
+    - Lexical Closures
+        
+        Penutupan Leksikal (Lexical Closure) adalah konsep di mana sebuah fungsi dapat "menyimpan" atau "membawa" variabel dari lingkup leksikal di sekitarnya, bahkan setelah konteks di mana variabel tersebut dideklarasikan telah selesai dieksekusi. Closure "mengikat" variabel-variabel dari lingkup tempat fungsi tersebut dideklarasikan, sehingga variabel tersebut tetap tersedia saat fungsi dipanggil nanti, meskipun lingkup eksternal tersebut sudah tidak aktif atau sudah selesai dieksekusi.
+
+        Dengan kata lain, closure memungkinkan fungsi untuk mengingat dan menggunakan variabel dari lingkup di luar fungsi, walaupun lingkup tersebut sudah tidak ada atau tidak aktif lagi.
+
+        *Contoh Penutupan Leksikal:*
+
+        ```dart
+        Function createAdder(int x) {
+        return (int y) => x + y;  // Fungsi ini "menutup" variabel 'x' dari scope di luar fungsi ini
+        }
+
+        void main() {
+        var addTen = createAdder(10);
+        print(addTen(5));  // Output: 15
+        }
+        ```
+
 7. Jelaskan dengan contoh cara membuat return multiple value di Functions!
+    **JAWABAN:**
+    - Menggunakan Tuple (Record)
+        Dart mendukung penggunaan record untuk mengembalikan beberapa nilai sekaligus. Dengan menggunakan record, dapat mengembalikan beberapa nilai dalam satu struktur tanpa perlu membuat kelas atau objek. Mendeklarasikan dan mengembalikan nilai-nilai yang diinginkan dalam bentuk record.
+
+        *Contoh penggunaan record:*
+
+        ```dart
+        // Mendefinisikan fungsi yang mengembalikan record
+        (String, int) getUserInfo() {
+        return ('Bagus Wahasdwika', 2241720223);
+        }
+
+        void main() {
+        var userInfo = getUserInfo(); // Memanggil fungsi
+
+        // Mengakses nilai dari record
+        print('Nama: ${userInfo.$1}'); // Output: Nama: Bagus Wahasdwika
+        print('NIM: ${userInfo.$2}');   // Output: NIM: 2241720223
+        }
+        ```
+    - Menggunakan List
+        Bisa mengembalikan beberapa nilai dalam bentuk list. Meskipun list biasanya digunakan untuk menyimpan koleksi data, ini juga merupakan cara yang efektif untuk mengembalikan beberapa nilai dari sebuah fungsi.
+
+        *Kode Menggunakan List:*
+
+        ```dart
+        List<dynamic> calculateValues() {
+        int sum = 5 + 10;
+        double average = sum / 2;
+
+        return [sum, average]; // Mengembalikan list dengan dua nilai
+        }
+
+        void main() {
+        var results = calculateValues(); // Memanggil fungsi
+
+        print('Jumlah: ${results[0]}');    // Output: Jumlah: 15
+        print('Rata-rata: ${results[1]}');  // Output: Rata-rata: 7.5
+        }
+        ```
+    - Menggunakan Object
+        Cara yang paling umum dan jelas untuk mengembalikan beberapa nilai dari sebuah fungsi adalah dengan menggunakan objek. Dan juga bisa membuat sebuah kelas untuk mengemas beberapa nilai yang ingin dikembalikan.
+
+        *Contoh Penggunaan Objek:*
+
+        ```dart
+        class User {
+        String name;
+        int nim;
+
+        User(this.name, this.nim); // Constructor untuk inisialisasi
+        }
+
+        User getUser() {
+        return User('Bagus Wahasdwika', 2241720223); // Mengembalikan objek User
+        }
+
+        void main() {
+        var user = getUser(); // Memanggil fungsi
+
+        print('Nama: ${user.name}'); // Output: Nama: Bagus Wahasdwika
+        print('NIM: ${user.nim}');    // Output: NIM: 2241720223
+        }
+        ```
+    - Menggunakan Map
+        Menggunakan Map untuk mengembalikan beberapa nilai dengan kunci yang jelas.
+
+        *Contoh Menggunakan Map:*
+
+        ```dart
+        Map<String, dynamic> getStudentData() {
+        return {
+            'name': 'Bagus Wahasdwika',
+            'nim': 2241720223,
+            'status': 'active'
+        };
+        }
+
+        void main() {
+        var studentData = getStudentData(); // Memanggil fungsi
+
+        print('Nama: ${studentData['name']}'); // Output: Nama: Bagus Wahasdwika
+        print('NIM: ${studentData['nim']}');    // Output: NIM: 2241720223
+        print('Status: ${studentData['status']}'); // Output: Status: active
+        }
+        ``` 
+
 8. Kumpulkan berupa link commit repo GitHub pada tautan yang telah disediakan di grup Telegram!
